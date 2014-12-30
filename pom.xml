@@ -35,7 +35,8 @@
 
     <maven-plugin-plugin.version>3.2</maven-plugin-plugin.version>
     <maven.api.version>3.0.4</maven.api.version>
-
+    <takari.test.version>2.0.0-SNAPSHOT</takari.test.version>
+    
     <easymock.version>3.2</easymock.version>
     <powermock.version>1.5.2</powermock.version>
     <publisher.version>v2-rev13-1.19.0</publisher.version>
@@ -283,12 +284,6 @@
 
       <!-- test deps -->
       <dependency>
-        <groupId>io.takari.maven.plugins</groupId>
-        <artifactId>takari-plugin-testing</artifactId>
-        <version>${takari.plugins.version}</version>
-      </dependency>
-
-      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.11</version>
@@ -489,6 +484,14 @@
     <dependency>
       <groupId>io.takari.maven.plugins</groupId>
       <artifactId>takari-plugin-testing</artifactId>
+      <version>${takari.test.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.takari.maven.plugins</groupId>
+      <artifactId>takari-plugin-integration-testing-with-maven-download</artifactId>
+      <version>${takari.test.version}</version>
+      <type>pom</type>
       <scope>test</scope>
     </dependency>
 
@@ -757,7 +760,7 @@
       <plugin>
         <groupId>io.takari.maven.plugins</groupId>
         <artifactId>takari-plugin-testing-plugin</artifactId>
-        <version>${takari.plugins.version}</version>
+        <!-- <version>${takari.test.version}</version> -->
         <executions>
           <execution>
             <id>testProperties</id>
@@ -770,7 +773,7 @@
       </plugin>
       <!-- get Maven runtime required for takari-plugin-testing based integration 
         tests -->
-      <plugin>
+      <!-- <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
@@ -802,6 +805,7 @@
           </execution>
         </executions>
       </plugin>
+       -->
     </plugins>
   </build>
 
