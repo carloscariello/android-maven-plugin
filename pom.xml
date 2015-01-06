@@ -576,7 +576,20 @@
       <plugin>
         <groupId>io.takari.maven.plugins</groupId>
         <artifactId>takari-lifecycle-plugin</artifactId>
+        <version>1.10.0-SNAPSHOT</version>
         <extensions>true</extensions>
+        <configuration>
+         <executions>
+          <execution>
+            <id>testProperties</id>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>testProperties</goal>
+            </goals>
+          </execution>
+        </executions>
+        </configuration>
+        
       </plugin>
       <plugin>
         <groupId>org.codehaus.plexus</groupId>
@@ -762,57 +775,6 @@
           </execution>
         </executions>
       </plugin>
-
-      <!-- add support for reactor resolution based IT tests -->
-      <plugin>
-        <groupId>io.takari.maven.plugins</groupId>
-        <artifactId>takari-plugin-testing-plugin</artifactId>
-        <!-- <version>${takari.test.version}</version> -->
-        <executions>
-          <execution>
-            <id>testProperties</id>
-            <phase>process-test-resources</phase>
-            <goals>
-              <goal>testProperties</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- get Maven runtime required for takari-plugin-testing based integration 
-        tests -->
-      <!-- <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>unpack</id>
-            <phase>generate-test-resources</phase>
-            <goals>
-              <goal>unpack</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/maven-installation</outputDirectory>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>org.apache.maven</groupId>
-                  <artifactId>apache-maven</artifactId>
-                  <version>3.0.5</version>
-                  <classifier>bin</classifier>
-                  <type>tar.gz</type>
-                </artifactItem>
-                <artifactItem>
-                  <groupId>org.apache.maven</groupId>
-                  <artifactId>apache-maven</artifactId>
-                  <version>3.2.3</version>
-                  <classifier>bin</classifier>
-                  <type>tar.gz</type>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-       -->
     </plugins>
   </build>
 
