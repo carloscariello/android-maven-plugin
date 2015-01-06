@@ -578,7 +578,6 @@
         <artifactId>takari-lifecycle-plugin</artifactId>
         <version>1.10.0-SNAPSHOT</version>
         <extensions>true</extensions>
-        <configuration>
          <executions>
           <execution>
             <id>testProperties</id>
@@ -588,8 +587,6 @@
             </goals>
           </execution>
         </executions>
-        </configuration>
-        
       </plugin>
       <plugin>
         <groupId>org.codehaus.plexus</groupId>
