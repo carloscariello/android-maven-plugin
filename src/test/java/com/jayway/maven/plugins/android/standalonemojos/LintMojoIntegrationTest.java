@@ -21,7 +21,6 @@ import java.io.File;
  * 
  */
 @RunWith( MavenJUnitTestRunner.class )
-@MavenInstallations( {"target/maven-installation/apache-maven-3.2.3"} )
 @MavenVersions( {"3.0.5", "3.2.5" } )
 public class LintMojoIntegrationTest
 {
